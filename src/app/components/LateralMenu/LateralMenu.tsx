@@ -16,12 +16,12 @@ const LateralMenu = () => {
       >
         <ClientOnly>
           <LiveClock />
-        </ClientOnly>
 
-        <div className="flex-1 flex items-center justify-center gap-8">
-          <MusicController />
-          <Scenes />
-        </div>
+          <div className="flex-1 flex items-center justify-center gap-8">
+            <MusicController />
+            <Scenes />
+          </div>
+        </ClientOnly>
       </div>
     </div>
   );
