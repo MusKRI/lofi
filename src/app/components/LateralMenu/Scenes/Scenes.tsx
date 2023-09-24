@@ -2,7 +2,7 @@
 
 // **** Library Imports ****
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, MouseEvent } from "react";
 
 // **** Local Imports ****
 import SceneIcon from "./SceneIcon";
@@ -61,9 +61,13 @@ const Scenes = () => {
   };
 
   useEffect(() => {
-    const checkIfClickedOutside = (e) => {
-      if (ref.current && buttonRef.current && !ref.current.contains(e.target)) {
-        if (buttonRef.current.contains(e.target)) {
+    const checkIfClickedOutside = (e: Event) => {
+      if (
+        ref.current &&
+        buttonRef.current &&
+        !ref.current.contains(e.target as Node)
+      ) {
+        if (buttonRef.current.contains(e.target as Node)) {
           if (isOpen) {
             onOpenChange(false);
           } else {
